@@ -22,7 +22,7 @@ app.set("view engine", "ejs");
 // manipulate dom to show final lineup
 // conditional check to make sure input total === 5
 
-MongoClient.connect(connectionString)
+MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then((client) => {
     console.log("Connected to Database");
     const db = client.db("valo-agents");
